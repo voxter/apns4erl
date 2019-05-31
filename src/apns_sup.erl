@@ -46,7 +46,7 @@ start_link() ->
 
 %% @doc Creates a new connection. It needs an apns_connection:connection()
 %%      parameter in order to create the connection with APNs.
--spec create_connection(apns_connection:connection()) -> {ok, pid()}.
+-spec create_connection(apns_connection:connection()) -> {ok, pid()} | {error, Reason :: term()}.
 create_connection(Connection) ->
   supervisor:start_child(?MODULE, [Connection, self()]).
 

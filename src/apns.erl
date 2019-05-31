@@ -84,7 +84,7 @@ connect(Type, ConnectionName) ->
   connect(DefaultConnection).
 
 %% @doc Connects to APNs service
--spec connect(apns_connection:connection()) -> {ok, pid()}.
+-spec connect(apns_connection:connection()) -> {ok, pid()} | {error, Reason :: term()}.
 connect(Connection) ->
   apns_sup:create_connection(Connection).
 
